@@ -1,0 +1,304 @@
+ html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+       background-image: url('https://raw.githubusercontent.com/Ben00000000/minagame/main/Hellcano.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+}
+
+#character,
+#enemy {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+}
+
+#character {
+    background-image: url('https://raw.githubusercontent.com/Ben00000000/minagame/main/0_Minotaur_Idle_000.png');
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#enemy {
+    background-image: url('https://raw.githubusercontent.com/Ben00000000/minagame/main/0_Minotaur_Run%20Slashing_000.png');
+    right: 0;
+}
+
+#collision-text {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: red;
+    font-weight: bold;
+    display: none;
+}
+
+#lives-display {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+}
+
+#movement-buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    user-select: none;
+    outline: none;
+}
+
+#left-button,
+#right-button,
+#jump-button {
+     width: 50px;
+     height: 50px;
+    display: inline-block;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    user-select: none;
+    outline: none;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+#left-button {
+    background-image: url('https://raw.githubusercontent.com/Ben00000000/minagame/main/left.png');
+}
+
+#right-button {
+    background-image: url('https://raw.githubusercontent.com/Ben00000000/minagame/main/right.png');
+}
+
+#jump-button {
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    margin-right: 50px;
+    background-image: url('https://raw.githubusercontent.com/Ben00000000/minagame/main/jump.png');
+}
+
+button:hover {
+    background-color: #272832;
+}
+
+#game-over-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#game-over-content {
+    text-align: center;
+    color: white;
+}
+
+#game-over-content h1 {
+    font-size: 3.5em;
+}
+
+#game-over-content p {
+    font-size: 1.5em;
+}
+
+#final-score {
+    font-size: 1em;
+}
+
+#restart-button {
+    width: 50px;
+    height: 50px;
+    background-image: url('https://raw.githubusercontent.com/Ben00000000/Player-Normal/main/restart.png');
+    background-size: cover;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    animation: scaleAnimation 2s infinite;
+    margin-right: 50px;
+}
+
+#restart-button:hover {
+    background-color: #2980b9;
+    animation: none;
+    opacity: 0.8;
+}
+
+#main-menu-button {
+    width: 50px;
+    height: 50px;
+    background-image: url('https://raw.githubusercontent.com/Ben00000000/minagame/main/crush.png');
+    background-size: cover;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    animation: scaleAnimation 2s infinite;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+#main-menu-button:hover {
+    background-color: #8D8D7D;
+    animation: none;
+    opacity: 0.8;
+}
+
+
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+#character {
+    transition: bottom 0.5s; /* Adjust the duration as needed */
+}
+
+#main-menu {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+
+  /* Optional: Add a background image */
+   background-image: url('https://raw.githubusercontent.com/Ben00000000/minagame/main/Splash-02.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#main-menu h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+#main-menu button {
+  background-color: #2ecc71; /* Green button color */
+  color: #fff;
+  font-size: 1.5em;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#main-menu button:hover {
+  background-color: #27ae60; /* Darker green on hover */
+}
+
+/* Play button styles */
+#play-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+    background-image: url('https://raw.githubusercontent.com/Ben00000000/minagame/main/minotaur.png');
+    background-size: cover;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition */
+    opacity: 0.9;
+}
+
+/* About button styles */
+#about-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+    background-image: url('https://raw.githubusercontent.com/Ben00000000/minagame/main/wooden-sign%20(3).png');
+    background-size: cover;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition */
+    opacity: 0.9;
+}
+
+/* Add a hover effect for both buttons */
+#play-button:hover,
+#about-button:hover {
+    transform: scale(1.2); /* Scale the buttons on hover */
+    opacity: 0.9;
+}
+
+/* Add a click effect for both buttons */
+#play-button:active,
+#about-button:active {
+    transform: scale(0.8); /* Scale the buttons when clicked */
+    opacity: 0.9;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+   background: url('bg.png');
+   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+#loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #42100E; /* Change the color here */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+   z-index: 99999;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+

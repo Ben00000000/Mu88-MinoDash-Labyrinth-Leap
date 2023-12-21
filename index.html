@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - MinoDash: Labyrinth Leap</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mina Game</title>
+</head>
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="loader"></div>
+</div>
+
+<!-- Main Menu screen -->
+<div id="main-menu">
+    <h1>
+        <img src="https://raw.githubusercontent.com/Ben00000000/minagame/main/Navbar-01.png" alt="MinoDash: Labyrinth Leap Logo">
+    </h1>
+    <button id="play-button"></button>
+</div>
+
+<div id="game-container" style="display: none;">
+        <div id="character"></div>
+        <div id="enemy"></div>
+        <div id="collision-text"></div>
+        <div id="lives-display"></div>
+        <div id="movement-buttons">
+            <button id="left-button"></button>
+            <button id="right-button"></button>
+        </div>
+        <button id="jump-button"></button>
+    </div>
+
+<!-- Game Over screen -->
+<div id="game-over-overlay" style="display: none;">
+    <div id="game-over-content">
+        <h1>Game Over</h1>
+        <p id="final-score">Final Score: 0</p>
+        <p id="high-score">High Score: 0</p>
+        <button id="restart-button"></button>
+        <button id="main-menu-button"></button>
+    </div>
+</div>
+
+
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get references to the main menu, game container, and game over overlay
+    var mainMenu = document.getElementById('main-menu');
+    var gameContainer = document.getElementById('game-container');
+    var gameOverOverlay = document.getElementById('game-over-overlay');
+      var preloader = document.getElementById('preloader');
+
+    // Get references to the buttons
+    var playButton = document.getElementById('play-button');
+
+
+
+  function hidePreloader() {
+    preloader.style.display = 'none';
+  }
+
+    // Play button click event
+    playButton.addEventListener('click', function () {
+        // Hide the main menu
+        mainMenu.style.display = 'none';
+
+        // Show the game container
+        gameContainer.style.display = 'block';
+
+        // Start or initialize your game logic here
+        // You may want to call a function from script.js to start the game
+        // For example: startGame();
+    });
+
+
+
+    // Function to handle the main menu button click event
+    function showMainMenu() {
+        // Reload the HTML page
+        location.reload();
+
+    }
+
+    // Add event listener for the main menu button
+    var mainMenuButton = document.getElementById('main-menu-button');
+    mainMenuButton.addEventListener('click', showMainMenu);
+  window.onload = function () {
+    // Hide the preloader once everything is loaded
+    hidePreloader();
+  };
+
+});
+
+</script>
+</body>
+</html>
